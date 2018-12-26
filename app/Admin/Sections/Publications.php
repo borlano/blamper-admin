@@ -55,23 +55,11 @@ class Publications extends Section
     {
         $display = \AdminDisplay::datatables()
             ->setColumns([
-                AdminColumn::relatedLink('user.phone', 'Пользователь'),
-                AdminColumn::text('sum', 'Сумма операции'),
-                AdminColumn::text('message', 'Комментарий'),
+                AdminColumn::relatedLink('id', 'ID'),
+                AdminColumn::text('created', 'Дата создания'),
+                AdminColumn::text('title', 'Title'),
                 AdminColumn::text('code', 'Код'),
                 \AdminColumnEditable::checkbox('status','Получен','Не получен', 'Статус'),
-                AdminColumn::datetime('created_at', 'Дата'),
-                AdminColumn::datetime('expires_at', 'Истекает'),
-                AdminColumn::custom('Относится', function ($model){
-                    /** @var $model Operation */
-                    if($model->document_type == Bonus::class){
-                        $text = $model->operationable ? $model->operationable->name : 'Бонус профиля';
-                        return "<a href='/admin/bonuses/{$model->document_id}/edit'>{$text}</a>";
-                    } else {
-                        $text = $model->operationable ? "чек № {$model->operationable->i}" : 'Чек ';
-                        return "<a href='/admin/checks/{$model->document_id}/edit'>{$text}</a>";
-                    }
-                }),
                 \AdminColumnEditable::checkbox('anullate','Да','Нет', 'Ануллирована'),
             ])
             ->paginate(30)
