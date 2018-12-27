@@ -57,11 +57,15 @@ class Publications extends Section implements Initializable
             ->setColumns([
                 AdminColumn::relatedLink('id', 'ID'),
                 AdminColumn::text('title', 'Заголовок'),
+                AdminColumn::text('block_body[0].block', 'Заголовок'),
                 AdminColumn::custom("Тип", function(\Illuminate\Database\Eloquent\Model $model) {
                     if($model->type == 5)
                         return "Статья";
                     else
                         return "Вопрос";
+                }),
+                AdminColumn::custom("Тип", function(\Illuminate\Database\Eloquent\Model $model) {
+                    return $model->extra["source"];
                 }),
                 \AdminColumnEditable::checkbox('status', 'Да',"Нет","Активен"),
             ])
@@ -79,12 +83,9 @@ class Publications extends Section implements Initializable
         $display = AdminForm::form()->addElement(
             new FormElements([
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('s', 'Название')->setReadonly(1)])
-                    ->addColumn([AdminFormElement::datetime('created', 'дата и время чека')->setReadonly(1)]),
-
+                    ->addColumn([AdminFormElement::text('title', 'Название')]),
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('fn', 'Номер фиксального накопителя')->setReadonly(1)])
-                    ->addColumn([AdminFormElement::text('i', 'Номер фиксального документа')->setReadonly(1)]),
+                    ->addColumn([AdminFormElement::textarea("extra['source']", 'Текст')->setModelAttributeKey("extra['source']")])
             ])
         );
 

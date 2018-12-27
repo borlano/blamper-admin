@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2c9b3e48-1acd-4e47-bed0-5e2dac16942e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Sections/Publications.php" afterPath="$PROJECT_DIR$/app/Admin/Sections/Publications.php" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/navigation.php" afterPath="$PROJECT_DIR$/app/Admin/navigation.php" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AdminSectionsServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/AdminSectionsServiceProvider.php" />
-      <change beforePath="$PROJECT_DIR$/config/sleeping_owl.php" afterPath="$PROJECT_DIR$/config/sleeping_owl.php" />
-      <change beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Publication.php" afterPath="$PROJECT_DIR$/app/Models/Publication.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,11 +20,31 @@
       <file leaf-file-name="Publications.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Admin/Sections/Publications.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="67" column="27" lean-forward="false" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+            <state relative-caret-position="459">
+              <caret line="87" column="126" lean-forward="false" selection-start-line="87" selection-start-column="126" selection-end-line="87" selection-end-column="126" />
               <folding>
                 <element signature="e#38#95#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_ide_helper.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_ide_helper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="18221" column="57" lean-forward="false" selection-start-line="18221" selection-start-column="57" selection-end-line="18221" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queue.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/queue.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-612">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -74,8 +89,8 @@
       <file leaf-file-name="Publication.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Models/Publication.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="153">
+              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,7 +105,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/config/database.php" />
-        <option value="$PROJECT_DIR$/app/Models/Publication.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Admin/routes.php" />
@@ -100,6 +114,7 @@
         <option value="$PROJECT_DIR$/app/Admin/navigation.php" />
         <option value="$PROJECT_DIR$/app/Admin/Sections/Users.php" />
         <option value="$PROJECT_DIR$/config/sleeping_owl.php" />
+        <option value="$PROJECT_DIR$/app/Models/Publication.php" />
         <option value="$PROJECT_DIR$/app/Admin/Sections/Publications.php" />
       </list>
     </option>
@@ -332,12 +347,12 @@
       <option name="presentableId" value="Default" />
       <updated>1545833638942</updated>
       <workItem from="1545833640625" duration="4157000" />
-      <workItem from="1545917496743" duration="2248000" />
+      <workItem from="1545917496743" duration="5502000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6405000" />
+    <option name="totallyTimeSpent" value="9659000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -485,14 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Publication.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -524,10 +531,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Publication.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/queue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravelrus/sleepingowl/src/Form/Element/Textarea.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="4" column="33" lean-forward="true" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_ide_helper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="18221" column="57" lean-forward="false" selection-start-line="18221" selection-start-column="57" selection-end-line="18221" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravelrus/sleepingowl/src/Form/Element/NamedFormElement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="358" column="20" lean-forward="false" selection-start-line="358" selection-start-column="20" selection-end-line="358" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Sections/Publications.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="67" column="27" lean-forward="false" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
+        <state relative-caret-position="459">
+          <caret line="87" column="126" lean-forward="false" selection-start-line="87" selection-start-column="126" selection-end-line="87" selection-end-column="126" />
           <folding>
             <element signature="e#38#95#0#PHP" expanded="true" />
           </folding>

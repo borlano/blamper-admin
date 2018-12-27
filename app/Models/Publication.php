@@ -6,5 +6,6 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Publication extends Eloquent
 {
-    //
+    protected $connection = 'mongodb';
+
 }
