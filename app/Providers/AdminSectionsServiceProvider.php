@@ -12,6 +12,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
      */
     protected $sections = [
         \App\Models\Publication::class => 'App\Admin\Sections\Publications',
+        \App\Models\User::class => 'App\Admin\Sections\Users',
     ];
 
     /**

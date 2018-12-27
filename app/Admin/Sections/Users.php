@@ -1,7 +1,12 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: alexey
+ * Date: 27.12.2018
+ * Time: 16:49
+ */
 
 namespace App\Admin\Sections;
-
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Section;
@@ -15,20 +20,8 @@ use Illuminate\Support\Str;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Form\FormElements;
 
-/**
- * Class Publications
- *
- * @property \App\Models\Publication $model
- *
- * @see http://sleepingowladmin.ru/docs/model_configuration_section
- */
-class Publications extends Section implements Initializable
+class Users extends Section implements Initializable
 {
-    /**
-     * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
-     *
-     * @var bool
-     */
     protected $checkAccess = false;
 
     /**
@@ -47,7 +40,7 @@ class Publications extends Section implements Initializable
 
     public function initialize()
     {
-        $this->title = 'Публикации';
+        $this->title = 'Пользователи';
         $this->icon = 'fa fa-fw fa-file-text-o';
     }
 
@@ -56,16 +49,12 @@ class Publications extends Section implements Initializable
         $display = \AdminDisplay::datatables()
             ->setColumns([
                 AdminColumn::relatedLink('id', 'ID'),
-                AdminColumn::text('title', 'Заголовок'),
-                AdminColumn::custom("Тип", function(\Illuminate\Database\Eloquent\Model $model) {
-                    if($model->type == 5)
-                        return "Статья";
-                    else
-                        return "Вопрос";
-                }),
-                \AdminColumnEditable::checkbox('status', 'Да',"Нет","Активен"),
+                AdminColumn::text('email', 'Email'),
             ])
-            ->paginate(30);
+            ->paginate(30)
+            ->setApply(function ($query) {
+                $query->orderBy('created_at', 'desc');
+            });
         return $display;
     }
 
