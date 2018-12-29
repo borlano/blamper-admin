@@ -15,7 +15,7 @@ class AdminSectionsServiceProvider extends ServiceProvider
         \App\Models\User::class => 'App\Admin\Sections\Users',
         \App\Models\AutoMark::class => 'App\Admin\Sections\AutoMarks',
         \App\Models\AutoModel::class => 'App\Admin\Sections\AutoModels',
-        \App\Models\Subject::class => 'App\Admin\Sections\Subject',
+        \App\Models\Subject::class => 'App\Admin\Sections\Subjects',
     ];
 
     /**

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "4ac53bd3a7ca9f7c0e69b6291d712230",
+    "content-hash": "1add12850ad3152c098caaed91a82649",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -1070,6 +1070,61 @@
                 "trusted proxy"
             ],
             "time": "2018-02-07T20:20:57+00:00"
+        },
+        {
+            "name": "gazsp/baum",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gazsp/baum.git",
+                "reference": "717b68bde76e264732f6516b976d94f2030328d3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gazsp/baum/zipball/717b68bde76e264732f6516b976d94f2030328d3",
+                "reference": "717b68bde76e264732f6516b976d94f2030328d3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/console": "5.*",
+                "illuminate/database": "5.*",
+                "illuminate/events": "5.*",
+                "illuminate/filesystem": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "d11wtq/boris": "~1.0.10",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Baum": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Estanislau Trepat",
+                    "email": "estanis@etrepat.com",
+                    "homepage": "http://etrepat.com"
+                }
+            ],
+            "description": "Baum is an implementation of the Nested Set pattern for Eloquent models.",
+            "keywords": [
+                "Laravel 4",
+                "database",
+                "eloquent",
+                "laravel",
+                "laravel 5",
+                "nested set"
+            ],
+            "time": "2015-03-11T10:27:42+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",

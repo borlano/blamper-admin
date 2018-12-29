@@ -2,10 +2,12 @@
 
 namespace App\Admin\Sections;
 
+use App\Models\Subject;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Section;
+use AdminDisplay;
 
 /**
  * Class Subject
@@ -14,7 +16,7 @@ use SleepingOwl\Admin\Section;
  *
  * @see http://sleepingowladmin.ru/docs/model_configuration_section
  */
-class Subject extends Section implements Initializable
+class Subjects extends Section implements Initializable
 {
     /**
      * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
@@ -43,13 +45,9 @@ class Subject extends Section implements Initializable
      */
     public function onDisplay()
     {
-        $display = \AdminDisplay::datatables()
-            ->setColumns([
-                \AdminColumn::relatedLink('id', 'ID'),
-                \AdminColumn::text('name', 'Название'),
+        $display = AdminDisplay::tree(SleepingOwl\Admin\Display\Tree\BaumNodeType::class)
+            ->setValue('name');
 
-            ])
-            ->paginate(30);
         return $display;
     }
 
