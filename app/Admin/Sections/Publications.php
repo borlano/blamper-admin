@@ -2,6 +2,10 @@
 
 namespace App\Admin\Sections;
 
+use App\Models\Extra;
+use App\Models\Publication;
+use Illuminate\Http\Request;
+use PHPUnit\Util\RegularExpression;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Section;
@@ -25,30 +29,16 @@ use SleepingOwl\Admin\Form\FormElements;
 class Publications extends Section implements Initializable
 {
     /**
-     * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
-     *
-     * @var bool
-     */
-    protected $checkAccess = false;
-
-    /**
-     * @var string
-     */
-    protected $title;
-
-    /**
-     * @var string
-     */
-    protected $alias;
-
-    /**
      * @return DisplayInterface
      */
+
+
 
     public function initialize()
     {
         $this->title = 'Публикации';
         $this->icon = 'fa fa-fw fa-file-text-o';
+
     }
 
     public function onDisplay()
@@ -57,15 +47,11 @@ class Publications extends Section implements Initializable
             ->setColumns([
                 AdminColumn::relatedLink('id', 'ID'),
                 AdminColumn::text('title', 'Заголовок'),
-                AdminColumn::text('block_body[0].block', 'Заголовок'),
                 AdminColumn::custom("Тип", function(\Illuminate\Database\Eloquent\Model $model) {
                     if($model->type == 5)
                         return "Статья";
                     else
                         return "Вопрос";
-                }),
-                AdminColumn::custom("Тип", function(\Illuminate\Database\Eloquent\Model $model) {
-                    return $model->extra["source"];
                 }),
                 \AdminColumnEditable::checkbox('status', 'Да',"Нет","Активен"),
             ])
@@ -78,14 +64,23 @@ class Publications extends Section implements Initializable
      *
      * @return FormInterface
      */
-    public function onEdit($id)
+    public function onEdit($id,Request $request)
     {
+        if($res = $request->get("extra")) {
+            $pub = Publication::where("title",$request->get("title"))->first();
+            $extra = $pub->extra;
+            $res = $request->get("extra");
+            $extra->source = $res["source"];
+            $extra->save();
+        }
+
+
         $display = AdminForm::form()->addElement(
             new FormElements([
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('title', 'Название')]),
+                    ->addColumn([AdminFormElement::text('title', 'Заголовок')]),
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::textarea("extra['source']", 'Текст')->setModelAttributeKey("extra['source']")])
+                    ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")])
             ])
         );
 
@@ -95,17 +90,14 @@ class Publications extends Section implements Initializable
     /**
      * @return FormInterface
      */
-    public function onCreate()
+    public function onCreate(Request $request)
     {
-        return $this->onEdit(null);
+        return $this->onEdit(null,$request);
     }
 
-    /**
-     * @return void
-     */
-    public function onDelete($id)
+    public function isDeletable(Model $model)
     {
-        // remove if unused
+        return false;
     }
 
     /**
