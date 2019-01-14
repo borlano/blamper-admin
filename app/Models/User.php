@@ -9,7 +9,18 @@
 namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-class User extends Eloquent
+use Jenssegers\Mongodb\Auth\User as Authenticatable;
+class User extends Authenticatable
 {
-    protected $fillable = ["id", "avatar", "lastname", "firstname", "user_id"];
+    protected $connection = 'mongodb';
+    protected $fillable = ["id", "avatar", "lastname", "firstname",'email', 'password', "user_id"];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
 }
