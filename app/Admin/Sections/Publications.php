@@ -56,6 +56,10 @@ class Publications extends Section implements Initializable
                 \AdminColumnEditable::checkbox('status', 'Да',"Нет","Активен"),
             ])
             ->paginate(30);
+        $display->setColumnFilters([
+            null,
+            AdminColumnFilter::text()->setPlaceholder('Заголовок'),
+        ])->setplacement('table.header');
         return $display;
     }
 
@@ -66,24 +70,19 @@ class Publications extends Section implements Initializable
      */
     public function onEdit($id,Request $request)
     {
-        if($res = $request->get("extra")) {
-            $pub = Publication::where("title",$request->get("title"))->first();
-            $extra = $pub->extra;
-            $res = $request->get("extra");
-            $extra->source = $res["source"];
-            $extra->save();
-        }
-
-
         $display = AdminForm::form()->addElement(
             new FormElements([
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('title', 'Заголовок')]),
+                    ->addColumn([AdminFormElement::text('title', 'Заголовок')])
+                    ->addColumn([AdminFormElement::select('type', 'Тип',[5 => "Статья", 7 => "Вопрос"])]),
+
+                AdminFormElement::columns()
+                    ->addColumn([AdminFormElement::checkbox('status', 'Активен')],1)
+                    ->addColumn([AdminFormElement::checkbox('removed', 'Удален')]),
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")])
             ])
         );
-
         return $display;
     }
 

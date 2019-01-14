@@ -11,5 +11,5 @@ namespace App\Models;
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 class User extends Eloquent
 {
-
+    protected $fillable = ["id", "avatar", "lastname", "firstname", "user_id"];
 }
