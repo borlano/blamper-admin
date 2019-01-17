@@ -128,7 +128,7 @@ class ElasticInfo extends Command
             case "MongoDB\BSON\ObjectId":
                 $item = (string) $item;
                 break;
-            case \MongoDate::class:
+            case "MongoDB\BSON\UTCDateTime":
                 $item = (int) $item->sec;
                 break;
             default:

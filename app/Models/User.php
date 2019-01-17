@@ -21,12 +21,13 @@ class User extends Eloquent implements AuthenticatableContract, AuthorizableCont
     protected $connection = 'mongodb';
     protected $fillable = ["id", "avatar", "lastname", "firstname",'email', 'password', "user_id"];
 
+    public $timestamps = false;
     /**
      * The attributes that should be hidden for arrays.
      *
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'remember_token', '_id'
     ];
 }

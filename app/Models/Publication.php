@@ -6,6 +6,8 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Publication extends Eloquent
 {
+    const CREATED_AT = 'created';
+    const UPDATED_AT = 'updated';
     protected $connection = 'mongodb';
     protected $fillable = ["title", "status", "type", "id", "removed"];
     protected $dates = ["created","updated"];
