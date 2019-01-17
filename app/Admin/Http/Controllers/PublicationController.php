@@ -16,21 +16,25 @@ use Illuminate\Http\Request;
 class PublicationController
 {
     public function createPublication(Request $request,\Cviebrock\LaravelElasticsearch\Manager $elasticsearch){
-        $maxId = Publication::where("type", 5)->where("status", 1)->max("id");
+        $maxId = Publication::max("id");
         $maxId++;
-        //dd($maxId);
+        $res = $request->get("extra");
         $pub = Publication::create([
             "title" => $request->get("title"),
             "status" => (float)$request->get("status"),
             "type" => (int)$request->get("type"),
             "id" => $maxId,
-            "short_body" => "",
+            "short_body" => $request->get("short_body"),
             "created" => Carbon::now(),
             "updated" => Carbon::now(),
-            "removed" => (float)$request->get("removed")
+            "removed" => (float)$request->get("removed"),
+            "tags" => [],
+            "block_body" => [["type" => "text", "block" => $res["source"]],["type" => "text", "block" => $res["source"]]],
+            "answers" => [],
         ]);
-        $extra = $pub->extra;
-        $res = $request->get("extra");
+
+
+
         $pub->author()->create([
             "id" => 1,
             "user_id" => "52244c5419ecc27f043c16f8",
@@ -47,6 +51,7 @@ class PublicationController
             "type" => "default",
             "id" => (string)$pub->_id,
         ];
+        $data["body"]["block_body"] = json_encode($data["body"]["block_body"]);
         unset($data["body"]["extra"]["_id"]);
         unset($data["body"]["author"]["_id"]);
 //        echo "<pre>";
@@ -91,23 +96,16 @@ class PublicationController
         if (!is_object($item)) {
             return false;
         }
-//var_dump($item);
-        //$item = (string) $item;
-        //var_dump(get_class($item));
         switch (get_class($item)) {
             case "MongoDB\BSON\ObjectId":
                 $item = (string) $item;
                 break;
             case "MongoDB\BSON\UTCDateTime":
-//                var_dump($item->toDateTime());
-//                die;
                 $item = (int)(string) $item;
-                //var_dump($item);
                 break;
             default:
                 return false;
         }
-        //var_dump($item);
         return true;
     }
 }

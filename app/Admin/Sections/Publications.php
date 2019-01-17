@@ -80,7 +80,8 @@ class Publications extends Section implements Initializable
                     ->addColumn([AdminFormElement::checkbox('status', 'Активен')],1)
                     ->addColumn([AdminFormElement::checkbox('removed', 'Удален')]),
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")])
+                    ->addColumn([AdminFormElement::wysiwyg("short_body", "Краткое описание","ckeditor")])
+                    ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")->setHeight(500)])
             ])
         );
         return $display;
