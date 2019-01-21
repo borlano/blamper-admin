@@ -4,6 +4,8 @@ namespace App\Admin\Sections;
 
 use App\Models\Extra;
 use App\Models\Publication;
+use App\Models\Subject;
+use App\Services\PublicationServices;
 use Illuminate\Http\Request;
 use PHPUnit\Util\RegularExpression;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
@@ -59,6 +61,11 @@ class Publications extends Section implements Initializable
         $display->setColumnFilters([
             null,
             AdminColumnFilter::text()->setPlaceholder('Заголовок'),
+            null,
+//            AdminColumnFilter::select([1 =>"Да",0 => "Нет"], 'Активен')
+//                ->setDisplay('status')
+//                ->setPlaceholder('Статус')
+//                ->setColumnName('status'),
         ])->setplacement('table.header');
         return $display;
     }
@@ -78,9 +85,19 @@ class Publications extends Section implements Initializable
 
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::checkbox('status', 'Активен')],1)
-                    ->addColumn([AdminFormElement::checkbox('removed', 'Удален')]),
+                    ->addColumn([AdminFormElement::checkbox('removed', 'Удален')])
+                    ->addColumn([AdminFormElement::select('id', 'Рубрика')->setModelForOptions(Subject::class)->setDisplay('name')]),
+
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::wysiwyg("short_body", "Краткое описание","ckeditor")])
+                    ->addColumn([
+                        AdminFormElement::wysiwyg("short_body", "Краткое описание","ckeditor"),
+                        AdminFormElement::image("extra.cover","Изображение")->setSaveCallback(function($file, $path, $filename) use ($id){
+                            $withoutExt = pathinfo($filename, PATHINFO_FILENAME);
+                            $service = PublicationServices::genPathToFile($withoutExt);
+                            $file->move(public_path($service), $filename);
+                            return ['path' => $service, 'value' => $service ."/". $filename];
+                        })
+                    ])
                     ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")->setHeight(500)])
             ])
         );

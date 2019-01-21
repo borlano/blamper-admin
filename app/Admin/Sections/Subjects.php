@@ -45,7 +45,7 @@ class Subjects extends Section implements Initializable
      */
     public function onDisplay()
     {
-        $display = AdminDisplay::tree(SleepingOwl\Admin\Display\Tree\BaumNodeType::class)
+        $display = AdminDisplay::tree()
             ->setValue('name');
 
         return $display;

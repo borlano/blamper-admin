@@ -7,6 +7,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/laravel-ide-helper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/barryvdh/reflection-docblock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/beyondcode/laravel-dump-server" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/beyondlex/mongodb-tree" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cviebrock/laravel-elasticsearch" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/davejamesmiller/laravel-breadcrumbs" />
@@ -35,6 +36,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/jenssegers/mongodb" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kalnoy/nestedset" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kodicms/laravel-assets" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kodicomponents/navigation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/kodicomponents/support" />
@@ -123,6 +125,7 @@
           <root url="file://$MODULE_DIR$/vendor/barryvdh/laravel-ide-helper" />
           <root url="file://$MODULE_DIR$/vendor/barryvdh/reflection-docblock" />
           <root url="file://$MODULE_DIR$/vendor/beyondcode/laravel-dump-server" />
+          <root url="file://$MODULE_DIR$/vendor/beyondlex/mongodb-tree" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/cviebrock/laravel-elasticsearch" />
           <root url="file://$MODULE_DIR$/vendor/davejamesmiller/laravel-breadcrumbs" />
@@ -151,6 +154,7 @@
           <root url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
           <root url="file://$MODULE_DIR$/vendor/jenssegers/mongodb" />
           <root url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+          <root url="file://$MODULE_DIR$/vendor/kalnoy/nestedset" />
           <root url="file://$MODULE_DIR$/vendor/kodicms/laravel-assets" />
           <root url="file://$MODULE_DIR$/vendor/kodicomponents/navigation" />
           <root url="file://$MODULE_DIR$/vendor/kodicomponents/support" />
@@ -235,6 +239,7 @@
           <root url="file://$MODULE_DIR$/vendor/barryvdh/laravel-ide-helper" />
           <root url="file://$MODULE_DIR$/vendor/barryvdh/reflection-docblock" />
           <root url="file://$MODULE_DIR$/vendor/beyondcode/laravel-dump-server" />
+          <root url="file://$MODULE_DIR$/vendor/beyondlex/mongodb-tree" />
           <root url="file://$MODULE_DIR$/vendor/composer" />
           <root url="file://$MODULE_DIR$/vendor/cviebrock/laravel-elasticsearch" />
           <root url="file://$MODULE_DIR$/vendor/davejamesmiller/laravel-breadcrumbs" />
@@ -263,6 +268,7 @@
           <root url="file://$MODULE_DIR$/vendor/jakub-onderka/php-console-highlighter" />
           <root url="file://$MODULE_DIR$/vendor/jenssegers/mongodb" />
           <root url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+          <root url="file://$MODULE_DIR$/vendor/kalnoy/nestedset" />
           <root url="file://$MODULE_DIR$/vendor/kodicms/laravel-assets" />
           <root url="file://$MODULE_DIR$/vendor/kodicomponents/navigation" />
           <root url="file://$MODULE_DIR$/vendor/kodicomponents/support" />
