@@ -6,7 +6,7 @@ use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
 
 class Extra extends Eloquent
 {
-    protected $fillable = ["source"];
+    protected $fillable = ["source", "cover", "cover_basename"];
     public $timestamps = false;
 
 }

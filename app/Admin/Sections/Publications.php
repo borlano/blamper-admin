@@ -90,12 +90,14 @@ class Publications extends Section implements Initializable
 
                 AdminFormElement::columns()
                     ->addColumn([
-                        AdminFormElement::wysiwyg("short_body", "Краткое описание","ckeditor"),
+                        AdminFormElement::textarea("short_body", "Краткое описание"),
                         AdminFormElement::image("extra.cover","Изображение")->setSaveCallback(function($file, $path, $filename) use ($id){
+                            //dd($file);
                             $withoutExt = pathinfo($filename, PATHINFO_FILENAME);
                             $service = PublicationServices::genPathToFile($withoutExt);
-                            $file->move(public_path($service), $filename);
-                            return ['path' => $service, 'value' => $service ."/". $filename];
+                            $file->move(public_path("/steady/".$service."/".$withoutExt), $filename);
+                            PublicationServices::resizeImages($filename, $withoutExt);
+                            return ['path' => "", 'value' => $withoutExt];
                         })
                     ])
                     ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")->setHeight(500)])

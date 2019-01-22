@@ -29,7 +29,7 @@ class PublicationController
             "updated" => Carbon::now(),
             "removed" => (float)$request->get("removed"),
             "tags" => [],
-            "block_body" => [["type" => "text", "block" => $res["source"]],["type" => "text", "block" => $res["source"]]],
+            "block_body" => [["type" => "text", "block" => $res["source"]]],
             "answers" => [],
         ]);
 
@@ -42,7 +42,11 @@ class PublicationController
             "firstname" => "Редакция",
             "lastname" => "Blamper"
         ]);
-        $pub->extra()->create(["source" => $res["source"]]);
+        $pub->extra()->create([
+            "source" => $res["source"],
+            "cover" => $res["cover"],
+            "cover_basename" => $res["cover"]
+        ]);
         $scalarData = self::toScalar($pub->getAttributes());
 
         $data = [
