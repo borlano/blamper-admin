@@ -30,12 +30,6 @@ use SleepingOwl\Admin\Form\FormElements;
  */
 class Publications extends Section implements Initializable
 {
-    /**
-     * @return DisplayInterface
-     */
-
-
-
     public function initialize()
     {
         $this->title = 'Публикации';

@@ -3,11 +3,21 @@
 namespace App\Admin\Sections;
 
 use App\Models\Subject;
+use App\Services\PublicationServices;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Section;
 use AdminDisplay;
+use Illuminate\Http\Request;
+use PHPUnit\Util\RegularExpression;
+use AdminColumn;
+use AdminForm;
+use AdminColumnFilter;
+use AdminFormElement;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+use SleepingOwl\Admin\Form\FormElements;
 
 /**
  * Class Subject
@@ -18,23 +28,6 @@ use AdminDisplay;
  */
 class Subjects extends Section implements Initializable
 {
-    /**
-     * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
-     *
-     * @var bool
-     */
-    protected $checkAccess = false;
-
-    /**
-     * @var string
-     */
-    protected $title;
-
-    /**
-     * @var string
-     */
-    protected $alias;
-
     public function initialize()
     {
         $this->title = 'Рубрики';
@@ -58,7 +51,13 @@ class Subjects extends Section implements Initializable
      */
     public function onEdit($id)
     {
-        // remove if unused
+        $display = AdminForm::form()->addElement(
+            new FormElements([
+                AdminFormElement::columns()
+                    ->addColumn([AdminFormElement::text('name', 'Название')])
+            ])
+        );
+        return $display;
     }
 
     /**
@@ -67,21 +66,5 @@ class Subjects extends Section implements Initializable
     public function onCreate()
     {
         return $this->onEdit(null);
-    }
-
-    /**
-     * @return void
-     */
-    public function onDelete($id)
-    {
-        // remove if unused
-    }
-
-    /**
-     * @return void
-     */
-    public function onRestore($id)
-    {
-        // remove if unused
     }
 }

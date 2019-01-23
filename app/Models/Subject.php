@@ -8,18 +8,10 @@ use Lex\Mongotree\TreeTrait;
 
 class Subject extends Eloquent
 {
-    use TreeTrait;
+    //use TreeTrait;
     protected $table = 'subject';
 //    // 'parent_id' column name
-    protected $fillable = ["parent_id"];
-//
-//    // 'lft' column name
-//    protected $leftColumn = 'nested_set.left';
-//
-//    // 'rgt' column name
-//    protected $rightColumn = 'nested_set.right';
-//
-//    // 'depth' column name
-//    protected $depthColumn = 'nested_set.level';
+    protected $fillable = ["parent_id", "name", "slug", "id", "is_table"];
+    public $timestamps = false;
 
 }
