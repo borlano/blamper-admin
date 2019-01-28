@@ -52,7 +52,10 @@ class Publications extends Section implements Initializable
                 }),
                 \AdminColumnEditable::checkbox('status', 'Да',"Нет","Активен"),
             ])
-            ->paginate(30);
+            ->paginate(30)
+        ->setApply(function ($q){
+            return $q->orderBy("id", "DESC")->where("type",5);
+        });
         $display->setColumnFilters([
             null,
             AdminColumnFilter::text()->setPlaceholder('Заголовок'),
