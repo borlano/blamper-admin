@@ -73,4 +73,9 @@ class Subjects extends Section implements Initializable
     {
         return $this->onEdit(null);
     }
+
+    public function isDeletable(Model $model)
+    {
+        return true;
+    }
 }
