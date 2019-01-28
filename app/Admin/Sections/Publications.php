@@ -51,6 +51,7 @@ class Publications extends Section implements Initializable
                         return "Вопрос";
                 }),
                 \AdminColumnEditable::checkbox('status', 'Да',"Нет","Активен"),
+                \AdminColumn::datetime('created', 'Дата'),
             ])
             ->paginate(30)
         ->setApply(function ($q){
