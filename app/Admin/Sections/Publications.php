@@ -85,17 +85,21 @@ class Publications extends Section implements Initializable
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::checkbox('status', 'Активен')],1)
                     ->addColumn([AdminFormElement::checkbox('removed', 'Удален')])
-                    ->addColumn([AdminFormElement::select('id', 'Рубрика')->setModelForOptions(Subject::class)->setDisplay('name')]),
+                    ->addColumn([AdminFormElement::select('id', 'Рубрика')
+                        ->setModelForOptions(Subject::class)
+                        ->setLoadOptionsQueryPreparer(function($element,$q){
+                            return $q->where("parent_id",1)->orWhere("id", "=",127)->where("is_table", false);
+                        })
+                        ->setDisplay('name')]),
 
                 AdminFormElement::columns()
                     ->addColumn([
                         AdminFormElement::textarea("short_body", "Краткое описание"),
                         AdminFormElement::image("extra.cover","Изображение")->setSaveCallback(function($file, $path, $filename) use ($id){
-                            //dd($file);
                             $withoutExt = Files::create()->_id;
-                            //$withoutExt = pathinfo($filename, PATHINFO_FILENAME);
                             $service = PublicationServices::genPathToFile($withoutExt);
-                            $file->move(public_path("/steady/".$service."/".$withoutExt), $withoutExt.".jpg");
+                            $file->move(public_path("/steady/".$service."/".$withoutExt), $withoutExt.".jpg"); //local
+                            //$file->move("/data/blamper/steady/".$service."/".$withoutExt, $withoutExt.".jpg"); //prod
                             PublicationServices::resizeImages($withoutExt.".jpg", $withoutExt);
                             return ['path' => "", 'value' => $withoutExt];
                         })
