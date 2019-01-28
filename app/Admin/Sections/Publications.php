@@ -3,6 +3,7 @@
 namespace App\Admin\Sections;
 
 use App\Models\Extra;
+use App\Models\Files;
 use App\Models\Publication;
 use App\Models\Subject;
 use App\Services\PublicationServices;
@@ -20,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Form\FormElements;
-
+use \MongoDB\BSON\ObjectID as MongoId;
 /**
  * Class Publications
  *
@@ -87,10 +88,11 @@ class Publications extends Section implements Initializable
                         AdminFormElement::textarea("short_body", "Краткое описание"),
                         AdminFormElement::image("extra.cover","Изображение")->setSaveCallback(function($file, $path, $filename) use ($id){
                             //dd($file);
-                            $withoutExt = pathinfo($filename, PATHINFO_FILENAME);
+                            $withoutExt = Files::create()->_id;
+                            //$withoutExt = pathinfo($filename, PATHINFO_FILENAME);
                             $service = PublicationServices::genPathToFile($withoutExt);
-                            $file->move(public_path("/steady/".$service."/".$withoutExt), $filename);
-                            PublicationServices::resizeImages($filename, $withoutExt);
+                            $file->move(public_path("/steady/".$service."/".$withoutExt), $withoutExt.".jpg");
+                            PublicationServices::resizeImages($withoutExt.".jpg", $withoutExt);
                             return ['path' => "", 'value' => $withoutExt];
                         })
                     ])

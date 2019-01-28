@@ -38,8 +38,14 @@ class Subjects extends Section implements Initializable
      */
     public function onDisplay()
     {
-        $display = AdminDisplay::tree()
-            ->setValue('name');
+        $display = AdminDisplay::datatables()
+            ->setColumns([
+                AdminColumn::text('name', 'Заголовок'),
+            ])
+            ->setApply(function ($q){
+                return $q->where("parent_id",1)->orWhere("id", "=",127)->where("is_table", false);
+            })
+            ->paginate(30);
 
         return $display;
     }

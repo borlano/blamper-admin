@@ -12,6 +12,7 @@ namespace App\Admin\Http\Controllers;
 use App\Models\Publication;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use \MongoDB\BSON\ObjectID as MongoId;
 
 class PublicationController
 {
@@ -44,7 +45,7 @@ class PublicationController
         ]);
         $pub->extra()->create([
             "source" => $res["source"],
-            "cover" => $res["cover"],
+            "cover" => new MongoId($res["cover"]),
             "cover_basename" => $res["cover"]
         ]);
         $scalarData = self::toScalar($pub->getAttributes());
@@ -55,6 +56,7 @@ class PublicationController
             "type" => "default",
             "id" => (string)$pub->_id,
         ];
+
         $data["body"]["block_body"] = json_encode($data["body"]["block_body"]);
         unset($data["body"]["extra"]["_id"]);
         unset($data["body"]["author"]["_id"]);
@@ -65,7 +67,7 @@ class PublicationController
 
 
         $elasticsearch->index((object)$data);
-        //return $data;
+        return $data;
         return redirect()->back();
     }
 
