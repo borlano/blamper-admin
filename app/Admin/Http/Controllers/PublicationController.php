@@ -67,7 +67,7 @@ class PublicationController
 
 
         $elasticsearch->index((object)$data);
-        return $data;
+        //return $data;
         return redirect()->back();
     }
 

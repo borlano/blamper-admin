@@ -120,7 +120,17 @@ class Publications extends Section implements Initializable
 
     public function isDeletable(Model $model)
     {
-        return false;
+        return true;
+    }
+
+    public function onDelete($id, \Cviebrock\LaravelElasticsearch\Manager $elasticsearch){
+        //dd($id);
+        $data = [
+            "index" => "publications",
+            "type" => "default",
+            "id" => $id,
+        ];
+        $elasticsearch->delete($data);
     }
 
     /**
