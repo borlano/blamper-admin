@@ -46,7 +46,7 @@ class PublicationServices
         $serviceSave = PublicationServices::genPathToFile($withoutExt,"covers");
 
         if (!file_exists(public_path("/steady/".$serviceSave."/".$withoutExt."/"))) {
-            mkdir(public_path("/steady/".$serviceSave."/".$withoutExt."/"), 777, true);
+            mkdir(public_path("/steady/".$serviceSave."/".$withoutExt."/"), 0777, true);
         }
         $image = Image::make(public_path("/steady/".$service."/".$withoutExt."/").$filename)->resize(565, 565);
         $image->save(public_path("/steady/".$serviceSave."/".$withoutExt."/")."565x565_".$filename);
