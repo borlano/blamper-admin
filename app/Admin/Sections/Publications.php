@@ -130,7 +130,11 @@ class Publications extends Section implements Initializable
             "type" => "default",
             "id" => $id,
         ];
-        $elasticsearch->delete($data);
+        try {
+            $elasticsearch->delete($data);
+        }catch(\Exception $e){
+            
+        }
     }
 
     /**
