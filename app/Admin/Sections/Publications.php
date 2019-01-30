@@ -133,7 +133,7 @@ class Publications extends Section implements Initializable
         try {
             $elasticsearch->delete($data);
         }catch(\Exception $e){
-            
+
         }
     }
 

@@ -56,7 +56,7 @@ class PublicationController
             "type" => "default",
             "id" => (string)$pub->_id,
         ];
-
+        $data["body"]["block_body"][0]["block"] = substr($data["body"]["block_body"][0]["block"], 0, 10000);
         $data["body"]["block_body"] = json_encode($data["body"]["block_body"]);
         unset($data["body"]["extra"]["_id"]);
         unset($data["body"]["author"]["_id"]);
