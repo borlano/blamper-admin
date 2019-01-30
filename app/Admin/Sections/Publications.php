@@ -79,13 +79,13 @@ class Publications extends Section implements Initializable
         $display = AdminForm::form()->addElement(
             new FormElements([
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('title', 'Заголовок')])
+                    ->addColumn([AdminFormElement::text('title', 'Заголовок')->required()])
                     ->addColumn([AdminFormElement::select('type', 'Тип',[5 => "Статья", 7 => "Вопрос"])]),
 
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::checkbox('status', 'Активен')],1)
-                    ->addColumn([AdminFormElement::checkbox('removed', 'Удален')])
-                    ->addColumn([AdminFormElement::select('id', 'Рубрика')
+                    ->addColumn([AdminFormElement::checkbox('status', 'Активен')->required()],1)
+                    ->addColumn([AdminFormElement::checkbox('removed', 'Удален')->required()])
+                    ->addColumn([AdminFormElement::select('subject', 'Рубрика')->required()
                         ->setModelForOptions(Subject::class)
                         ->setLoadOptionsQueryPreparer(function($element,$q){
                             return $q->where("parent_id",1)->orWhere("id", "=",127)->where("is_table", false);
@@ -94,7 +94,7 @@ class Publications extends Section implements Initializable
 
                 AdminFormElement::columns()
                     ->addColumn([
-                        AdminFormElement::textarea("short_body", "Краткое описание"),
+                        AdminFormElement::textarea("short_body", "Краткое описание")->required(),
                         AdminFormElement::image("extra.cover","Изображение")->setSaveCallback(function($file, $path, $filename) use ($id){
                             $withoutExt = Files::create()->_id;
                             $service = PublicationServices::genPathToFile($withoutExt);
@@ -102,9 +102,9 @@ class Publications extends Section implements Initializable
                             $file->move(public_path("/steady/".$service."/".$withoutExt), $withoutExt.".jpg"); //prod
                             PublicationServices::resizeImages($withoutExt.".jpg", $withoutExt);
                             return ['path' => "", 'value' => $withoutExt];
-                        })
+                        })->required()
                     ])
-                    ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")->setHeight(500)])
+                    ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")->setHeight(500)->required()])
             ])
         );
         return $display;

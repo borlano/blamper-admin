@@ -10,6 +10,7 @@ namespace App\Admin\Http\Controllers;
 
 
 use App\Models\Publication;
+use App\Models\Subject;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use \MongoDB\BSON\ObjectID as MongoId;
@@ -17,21 +18,35 @@ use \MongoDB\BSON\ObjectID as MongoId;
 class PublicationController
 {
     public function createPublication(Request $request,\Cviebrock\LaravelElasticsearch\Manager $elasticsearch){
+//dd($request->get("subject"));
+        $subject_id = new Mongoid ($request->get("subject"));
+//dd($subject_id);
+        $subject = Subject::where("_id",$subject_id)->first()->toArray();
+
+        //dd($subject);
         $maxId = Publication::max("id");
         $maxId++;
         $res = $request->get("extra");
         $pub = Publication::create([
-            "title" => $request->get("title"),
-            "status" => (float)$request->get("status"),
-            "type" => (int)$request->get("type"),
-            "id" => $maxId,
-            "short_body" => $request->get("short_body"),
-            "created" => Carbon::now(),
-            "updated" => Carbon::now(),
-            "removed" => (float)$request->get("removed"),
-            "tags" => [],
-            "block_body" => [["type" => "text", "block" => $res["source"]]],
-            "answers" => [],
+            "title"         => $request->get("title"),
+            "status"        => (float)$request->get("status"),
+            "type"          => (int)$request->get("type"),
+            "id"            => $maxId,
+            "short_body"    => $request->get("short_body"),
+            "created"       => Carbon::now(),
+            "updated"       => Carbon::now(),
+            "removed"       => (float)$request->get("removed"),
+            "tags"          => [],
+            "block_body"    => [["type" => "text", "block" => $res["source"]]],
+            "answers"       => [],
+            "subjects"      => [
+                0 => [
+                    "id" => $subject["id"],
+                    "name" => $subject["name"],
+                    "slug" => $subject["slug"],
+                    "path" => [0 => 1, 1 => $subject["id"]]
+                ]
+            ],
         ]);
 
 

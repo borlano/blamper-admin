@@ -9,7 +9,7 @@ class Publication extends Eloquent
     const CREATED_AT = 'created';
     const UPDATED_AT = 'updated';
     protected $connection = 'mongodb';
-    protected $fillable = ["title", "status", "type", "id", "removed","block_body", "short_body", "tags","answers"];
+    protected $fillable = ["title", "status", "type", "id", "removed","block_body", "short_body", "tags","answers", "subjects"];
     protected $dates = ["created","updated"];
     public function extra()
     {
