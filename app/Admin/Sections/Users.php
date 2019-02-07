@@ -70,12 +70,10 @@ class Users extends Section implements Initializable
         $display = AdminForm::form()->addElement(
             new FormElements([
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('s', 'Название')->setReadonly(1)])
-                    ->addColumn([AdminFormElement::datetime('created', 'дата и время чека')->setReadonly(1)]),
-
+                    ->addColumn([AdminFormElement::text('email', 'Email')]),
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('fn', 'Номер фиксального накопителя')->setReadonly(1)])
-                    ->addColumn([AdminFormElement::text('i', 'Номер фиксального документа')->setReadonly(1)]),
+                    ->addColumn([AdminFormElement::text('profile.firstname', 'Имя')])
+                    ->addColumn([AdminFormElement::text('profile.lastname', 'Фамилия')]),
             ])
         );
 
@@ -90,19 +88,8 @@ class Users extends Section implements Initializable
         return $this->onEdit(null);
     }
 
-    /**
-     * @return void
-     */
-    public function onDelete($id)
+    public function isDeletable(Model $model)
     {
-        // remove if unused
-    }
-
-    /**
-     * @return void
-     */
-    public function onRestore($id)
-    {
-        // remove if unused
+        return false;
     }
 }
