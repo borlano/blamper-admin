@@ -28,6 +28,7 @@ class SubjectController extends Controller
             "is_table" => false,
             "parent_id" => 1,
             "slug" => Str::slug($request->get("name")),
+            "path" => [0 => 1, 1 => $maxId]
         ]);
 
         return redirect()->back();
