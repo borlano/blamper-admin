@@ -15,6 +15,7 @@ use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
+use App\Models\Profile;
 class User extends Eloquent implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
@@ -30,4 +31,9 @@ class User extends Eloquent implements AuthenticatableContract, AuthorizableCont
     protected $hidden = [
         'password', 'remember_token', '_id'
     ];
+
+    public function profile()
+    {
+        return $this->embedsOne(Profile::class);
+    }
 }

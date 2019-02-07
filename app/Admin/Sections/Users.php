@@ -50,6 +50,8 @@ class Users extends Section implements Initializable
             ->setColumns([
                 AdminColumn::relatedLink('id', 'ID'),
                 AdminColumn::text('email', 'Email'),
+                AdminColumn::text('profile.firstname', 'Имя'),
+                AdminColumn::text('profile.lastname', 'Фамилия'),
             ])
             ->paginate(30)
             ->setApply(function ($query) {
