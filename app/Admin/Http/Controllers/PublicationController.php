@@ -17,6 +17,11 @@ use \MongoDB\BSON\ObjectID as MongoId;
 
 class PublicationController
 {
+    /**
+     * @param Request $request
+     * @param \Cviebrock\LaravelElasticsearch\Manager $elasticsearch
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function createPublication(Request $request,\Cviebrock\LaravelElasticsearch\Manager $elasticsearch){
 //dd($request->get("subject"));
         $subject_id = new Mongoid ($request->get("subject"));

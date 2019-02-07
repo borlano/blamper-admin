@@ -73,7 +73,8 @@ class Users extends Section implements Initializable
                     ->addColumn([AdminFormElement::text('email', 'Email')]),
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::text('profile.firstname', 'Имя')])
-                    ->addColumn([AdminFormElement::text('profile.lastname', 'Фамилия')]),
+                    ->addColumn([AdminFormElement::text('profile.lastname', 'Фамилия')])
+                    ->addColumn([AdminFormElement::hidden('_id')]),
             ])
         );
 
