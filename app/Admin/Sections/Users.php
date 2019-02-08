@@ -57,6 +57,12 @@ class Users extends Section implements Initializable
             ->setApply(function ($query) {
                 $query->orderBy('created_at', 'desc');
             });
+        $display->setColumnFilters([
+            null,
+            AdminColumnFilter::text()->setPlaceholder('Email'),
+            AdminColumnFilter::text()->setPlaceholder('Имя'),
+            AdminColumnFilter::text()->setPlaceholder('Фамилия'),
+        ])->setplacement('table.header');
         return $display;
     }
 
