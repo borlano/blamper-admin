@@ -111,7 +111,7 @@ class PublicationController
             "status"        => $status?$status:0,
             "type"          => $type,
             "short_body"    => $short_body,
-            "removed"       => $removed,
+            "removed"       => $removed?$removed:0,
 //            "tags"          => [],
 //            "answers"       => [],//TODO доделать теги и ответы на вопросы
 //            "block_body"    => [["type" => "text", "block" => $res["source"]]],
