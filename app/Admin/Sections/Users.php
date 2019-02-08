@@ -60,8 +60,8 @@ class Users extends Section implements Initializable
         $display->setColumnFilters([
             null,
             AdminColumnFilter::text()->setPlaceholder('Email'),
-            AdminColumnFilter::text()->setPlaceholder('Имя'),
-            AdminColumnFilter::text()->setPlaceholder('Фамилия'),
+//            AdminColumnFilter::text()->setPlaceholder('Имя'),
+//            AdminColumnFilter::text()->setPlaceholder('Фамилия'),
         ])->setplacement('table.header');
         return $display;
     }
@@ -73,6 +73,7 @@ class Users extends Section implements Initializable
      */
     public function onEdit($id)
     {
+        //dd($this->model->qa_roles);
         $display = AdminForm::form()->addElement(
             new FormElements([
                 AdminFormElement::columns()
@@ -80,6 +81,7 @@ class Users extends Section implements Initializable
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::text('profile.firstname', 'Имя')])
                     ->addColumn([AdminFormElement::text('profile.lastname', 'Фамилия')])
+                    ->addColumn([AdminFormElement::select('qa_role', "Роль на форуме",$this->model->qa_roles)])
                     ->addColumn([AdminFormElement::hidden('_id')]),
             ])
         );

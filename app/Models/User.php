@@ -19,7 +19,18 @@ class User extends Eloquent implements AuthenticatableContract, AuthorizableCont
 {
     use Authenticatable, Authorizable, CanResetPassword;
     protected $connection = 'mongodb';
-    protected $fillable = ["id", "avatar", "lastname", "firstname",'email', 'password', "user_id"];
+    protected $fillable = [
+        "id",
+        "avatar",
+        "lastname",
+        "firstname",
+        'email',
+        'password',
+        "user_id",
+        "qa_role", //роль на форуме
+    ];
+
+    public $qa_roles = [0 => "Новичок", "expert" => "Эксперт", "profi" => "Профи","parts" => "Подбор запчастей"];
 
     public $timestamps = false;
     /**

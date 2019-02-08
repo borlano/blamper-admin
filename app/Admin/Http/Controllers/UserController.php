@@ -15,18 +15,26 @@ use Illuminate\Http\Request;
 
 class UserController
 {
+    /**
+     * Свой обработчик редактирования юзера
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function editUser(Request $request,$id){
 
 
-        $firstname = $request->input("profile.firstname");
-        $lastname = $request->input("profile.lastname");
-        $email = $request->get("email");
+        $firstname  = $request->input("profile.firstname");
+        $lastname   = $request->input("profile.lastname");
+        $email      = $request->get("email");
+        $qa_role    = $request->get("qa_role");
 
 
         $user = User::where("_id",$id)->update([
             "profile.firstname" => $firstname,
-            "profile.lastname" => $lastname,
-            "email" => $email,
+            "profile.lastname"  => $lastname,
+            "email"             => $email,
+            "qa_role"           => $qa_role,
         ]);
 
 
