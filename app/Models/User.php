@@ -18,7 +18,10 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 class User extends Eloquent implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
     use Authenticatable, Authorizable, CanResetPassword;
+    const CREATED_AT = 'created';
+    const UPDATED_AT = 'updated';
     protected $connection = 'mongodb';
+    protected $dates = ["created","updated"];
     protected $fillable = [
         "id",
         "avatar",

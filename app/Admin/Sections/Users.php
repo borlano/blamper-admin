@@ -52,6 +52,7 @@ class Users extends Section implements Initializable
                 AdminColumn::text('email', 'Email'),
                 AdminColumn::text('profile.firstname', 'Имя'),
                 AdminColumn::text('profile.lastname', 'Фамилия'),
+                \AdminColumn::datetime('created', 'Дата регистрации'),
             ])
             ->paginate(30)
             ->setApply(function ($query) {
@@ -82,6 +83,7 @@ class Users extends Section implements Initializable
                     ->addColumn([AdminFormElement::text('profile.firstname', 'Имя')])
                     ->addColumn([AdminFormElement::text('profile.lastname', 'Фамилия')])
                     ->addColumn([AdminFormElement::select('qa_role', "Роль на форуме",$this->model->qa_roles)])
+                    ->addColumn([AdminFormElement::select('qa_role', "Роль на сайте",$this->model->qa_roles)])
                     ->addColumn([AdminFormElement::hidden('_id')]),
             ])
         );

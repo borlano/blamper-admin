@@ -81,7 +81,7 @@ class Publications extends Section implements Initializable
             new FormElements([
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::text('title', 'Заголовок')->required()])
-                    ->addColumn([AdminFormElement::select('type', 'Тип',[5 => "Статья", 7 => "Вопрос"])]),
+                    ->addColumn([AdminFormElement::select('type', 'Тип',[5 => "Статья", 7 => "Вопрос"])->setDefaultValue(5)]),
 
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::checkbox('status', 'Активен')->required()],1)
