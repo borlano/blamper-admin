@@ -6,6 +6,7 @@ Route::get('', ['as' => 'admin.dashboard', function () {
 }]);
 
 Route::post('/publications/create', 'App\Admin\Http\Controllers\PublicationController@createPublication')->name('admin.create.publication');
+Route::post('/publications/{id}/edit', 'App\Admin\Http\Controllers\PublicationController@editPublication')->name('admin.edit.publication');
 
 Route::post('/subjects/create', 'App\Admin\Http\Controllers\SubjectController@createSubject')->name('admin.create.subject');
 Route::post('/users/{id}/edit', 'App\Admin\Http\Controllers\UserController@editUser')->name('admin.edit.user');

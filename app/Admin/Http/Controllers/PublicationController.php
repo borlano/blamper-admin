@@ -18,6 +18,7 @@ use \MongoDB\BSON\ObjectID as MongoId;
 class PublicationController
 {
     /**
+     * Обработчик создания публикации(статьи или вопроса)
      * @param Request $request
      * @param \Cviebrock\LaravelElasticsearch\Manager $elasticsearch
      * @return \Illuminate\Http\RedirectResponse
@@ -93,6 +94,85 @@ class PublicationController
         return redirect()->back();
     }
 
+    public static function editPublication(Request $request,\Cviebrock\LaravelElasticsearch\Manager $elasticsearch, $id){
+//        $subject_id = new Mongoid ($request->get("subject"));
+//
+//        $subject = Subject::where("_id",$subject_id)->first()->toArray();
+
+        $title          = $request->get("title");
+        $type           = $request->get("type");
+        $status         = $request->get("status");
+        $removed        = $request->get("removed");
+        $short_body     = $request->get("short_body");
+        //$res            = $request->get("extra");
+
+        Publication::where("_id", $id)->update([
+            "title"         => $title,
+            "status"        => $status?$status:0,
+            "type"          => $type,
+            "short_body"    => $short_body,
+            "removed"       => $removed,
+//            "tags"          => [],
+//            "answers"       => [],//TODO доделать теги и ответы на вопросы
+//            "block_body"    => [["type" => "text", "block" => $res["source"]]],
+//            "subjects"      => [
+//                0 => [
+//                    "id" => $subject["id"],
+//                    "name" => $subject["name"],
+//                    "slug" => $subject["slug"],
+//                    "path" => [0 => 1, 1 => $subject["id"]]
+//                ]
+//            ],
+        //TODO Доделать вывод рубрик статьи
+            "updated"       => Carbon::now()->toDateTimeString(),
+        ]);
+        //$publication = Publication::where("_id", $id)->first();
+
+//        $pub->author()->create([
+//            "id" => 1,
+//            "user_id" => "52244c5419ecc27f043c16f8",
+//            "avatar" => null,
+//            "firstname" => "Редакция",
+//            "lastname" => "Blamper"
+//        ]); TODO Сделать изменения автора статьи
+//        $pub->extra()->create([
+//            "source" => $res["source"],
+//            "cover" => new MongoId($res["cover"]),
+//            "cover_basename" => $res["cover"]
+//        ]); TODO Сделать изменения оригинала текста и изменение аватарки
+        //$scalarData = self::toScalar($publication->getAttributes());
+
+        $data = [
+            "body" => [
+                'doc' => [
+                    "title"         => $title,
+                    "status"        => $status,
+                    "type"          => $type,
+                    "short_body"    => $short_body,
+                    "removed"       => $removed,
+                ]
+            ],
+            "index" => "publications",
+            "type" => "default",
+            "id" => (string)$id,
+        ];
+//        $data["body"]["block_body"][0]["block"] = substr($data["body"]["block_body"][0]["block"], 0, 10000);
+//        $data["body"]["block_body"][0]["block"] = mb_convert_encoding($data["body"]["block_body"][0]["block"], 'UTF-8', 'UTF-8');
+        //$data["body"]["block_body"] = json_encode($data["body"]["block_body"]);
+        //dd($data["body"]["updated"]);
+//        echo "<pre>";
+//        var_dump(json_last_error_msg());
+//        echo "</pre>";
+//        die;
+//        unset($data["body"]["extra"]["_id"]);
+//        unset($data["body"]["author"]["_id"]);
+
+
+
+        $elasticsearch->update($data);
+
+        return redirect()->back();
+    }
 
     /**
      * Convert data with Mongo types to scalar

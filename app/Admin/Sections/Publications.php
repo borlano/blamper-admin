@@ -50,7 +50,12 @@ class Publications extends Section implements Initializable
                     else
                         return "Вопрос";
                 }),
-                \AdminColumnEditable::checkbox('status', 'Да',"Нет","Активен"),
+                AdminColumn::custom("Активен", function(\Illuminate\Database\Eloquent\Model $model) {
+                    if($model->status == 1)
+                        return "Да";
+                    else
+                        return "<span style='color:red'>Нет</span>";
+                }),
                 \AdminColumnEditable::text('subjects[0][name]', 'Рубрика'),
                 \AdminColumn::datetime('created', 'Дата'),
             ])
@@ -84,8 +89,8 @@ class Publications extends Section implements Initializable
                     ->addColumn([AdminFormElement::select('type', 'Тип',[5 => "Статья", 7 => "Вопрос"])->setDefaultValue(5)]),
 
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::checkbox('status', 'Активен')->required()],1)
-                    ->addColumn([AdminFormElement::checkbox('removed', 'Удален')->required()])
+                    ->addColumn([AdminFormElement::checkbox('status', 'Активен')->setDefaultValue(1)],1)
+                    ->addColumn([AdminFormElement::checkbox('removed', 'Удален')])
                     ->addColumn([AdminFormElement::select('subject', 'Рубрика')->required()
                         ->setModelForOptions(Subject::class)
                         ->setLoadOptionsQueryPreparer(function($element,$q){
