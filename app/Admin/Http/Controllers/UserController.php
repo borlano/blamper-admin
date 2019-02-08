@@ -28,6 +28,7 @@ class UserController
         $lastname   = $request->input("profile.lastname");
         $email      = $request->get("email");
         $qa_role    = $request->get("qa_role");
+        $admin_role    = $request->get("adminRole");
 
 
         $user = User::where("_id",$id)->update([
@@ -35,6 +36,7 @@ class UserController
             "profile.lastname"  => $lastname,
             "email"             => $email,
             "qa_role"           => $qa_role,
+            "adminRole"         => $admin_role,
         ]);
 
 

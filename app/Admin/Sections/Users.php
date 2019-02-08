@@ -83,7 +83,7 @@ class Users extends Section implements Initializable
                     ->addColumn([AdminFormElement::text('profile.firstname', 'Имя')])
                     ->addColumn([AdminFormElement::text('profile.lastname', 'Фамилия')])
                     ->addColumn([AdminFormElement::select('qa_role', "Роль на форуме",$this->model->qa_roles)])
-                    ->addColumn([AdminFormElement::select('qa_role', "Роль на сайте",$this->model->qa_roles)])
+                    ->addColumn([AdminFormElement::select('adminRole', "Роль на сайте",$this->model->admin_roles)])
                     ->addColumn([AdminFormElement::hidden('_id')]),
             ])
         );
