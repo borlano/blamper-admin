@@ -31,9 +31,12 @@ class User extends Eloquent implements AuthenticatableContract, AuthorizableCont
         'password',
         "user_id",
         "qa_role", //роль на форуме
+        "adminRole", //роль на сайте
     ];
 
     public $qa_roles = [0 => "Новичок", "expert" => "Эксперт", "profi" => "Профи","parts" => "Подбор запчастей"];
+
+    public $admin_roles = [1 => "Пользователь", 2 => "Модератор", 100 => "Админинстратор"];
 
     public $timestamps = false;
     /**

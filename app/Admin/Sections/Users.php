@@ -34,9 +34,6 @@ class Users extends Section implements Initializable
      */
     protected $alias;
 
-    /**
-     * @return DisplayInterface
-     */
 
     public function initialize()
     {
