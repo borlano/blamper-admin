@@ -77,13 +77,15 @@ class PublicationController
             "id" => (string)$pub->_id,
         ];
         $data["body"]["block_body"][0]["block"] = substr($data["body"]["block_body"][0]["block"], 0, 10000);
+        $data["body"]["block_body"][0]["block"] = mb_convert_encoding($data["body"]["block_body"][0]["block"], 'UTF-8', 'UTF-8');
         $data["body"]["block_body"] = json_encode($data["body"]["block_body"]);
-        unset($data["body"]["extra"]["_id"]);
-        unset($data["body"]["author"]["_id"]);
 //        echo "<pre>";
-//        var_dump($data);
+//        var_dump(json_last_error_msg());
 //        echo "</pre>";
 //        die;
+        unset($data["body"]["extra"]["_id"]);
+        unset($data["body"]["author"]["_id"]);
+
 
 
         $elasticsearch->index((object)$data);
