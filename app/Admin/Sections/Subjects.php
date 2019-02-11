@@ -40,6 +40,7 @@ class Subjects extends Section implements Initializable
     {
         $display = AdminDisplay::datatables()
             ->setColumns([
+                AdminColumn::text('id', '№'),
                 AdminColumn::text('name', 'Заголовок'),
             ])
             ->setApply(function ($q){
