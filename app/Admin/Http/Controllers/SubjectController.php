@@ -17,18 +17,41 @@ use Illuminate\Support\Str;
 
 class SubjectController extends Controller
 {
+    /**
+     * Метод обработки создания рубрики
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function createSubject(Request $request){
 
         $maxId = Subject::max("id");
         $maxId++;
+        $is_new = $request->get("is_new"); //новая рубрика?
 
         $sub = Subject::create([
-            "name" => $request->get("name"),
-            "id" => $maxId,
-            "is_table" => false,
+            "name"      => $request->get("name"),
+            "id"        => $maxId,
+            "is_table"  => false,
             "parent_id" => 1,
-            "slug" => Str::slug($request->get("name")),
-            "path" => [0 => 1, 1 => $maxId]
+            "slug"      => Str::slug($request->get("name")),
+            "path"      => [0 => 1, 1 => $maxId],
+            "is_new"    => $is_new ? $is_new : 0,
+        ]);
+
+        return redirect()->back();
+    }
+
+    /** Метод обработки редактирования рубрики */
+    public function editSubject(Request $request,$id){
+
+        $name = $request->get("name");
+        $slug = Str::slug($request->get("name"));
+        $is_new = $request->get("is_new");
+
+        $user = Subject::where("_id",$id)->update([
+            "name" => $name,
+            "slug" => $slug,
+            "is_new" => $is_new ? $is_new : 0,
         ]);
 
         return redirect()->back();

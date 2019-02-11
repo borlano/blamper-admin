@@ -9,4 +9,5 @@ Route::post('/publications/create', 'App\Admin\Http\Controllers\PublicationContr
 Route::post('/publications/{id}/edit', 'App\Admin\Http\Controllers\PublicationController@editPublication')->name('admin.edit.publication');
 
 Route::post('/subjects/create', 'App\Admin\Http\Controllers\SubjectController@createSubject')->name('admin.create.subject');
+Route::post('/subjects/{id}/edit', 'App\Admin\Http\Controllers\SubjectController@editSubject')->name('admin.edit.subject');
 Route::post('/users/{id}/edit', 'App\Admin\Http\Controllers\UserController@editUser')->name('admin.edit.user');

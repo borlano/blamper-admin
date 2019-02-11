@@ -61,7 +61,9 @@ class Subjects extends Section implements Initializable
         $display = AdminForm::form()->addElement(
             new FormElements([
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('name', 'Название')])
+                    ->addColumn([AdminFormElement::text('name', 'Название')]),
+                AdminFormElement::columns()
+                    ->addColumn([AdminFormElement::checkbox('is_new', 'Новый')])
             ])
         );
         return $display;
