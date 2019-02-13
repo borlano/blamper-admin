@@ -90,7 +90,7 @@ class Publications extends Section implements Initializable
 
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::checkbox('status', 'Активен')->setDefaultValue(1)],1)
-                    ->addColumn([AdminFormElement::checkbox('removed', 'Удален')])
+                    //->addColumn([AdminFormElement::checkbox('removed', 'Удален')])
                     ->addColumn([AdminFormElement::select('subject', 'Рубрика')->required()
                         ->setModelForOptions(Subject::class)
                         ->setLoadOptionsQueryPreparer(function($element,$q){
@@ -149,5 +149,10 @@ class Publications extends Section implements Initializable
     public function onRestore($id)
     {
         // remove if unused
+    }
+
+    public function isEditable(Model $model)
+    {
+        return false;
     }
 }

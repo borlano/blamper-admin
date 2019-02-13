@@ -41,7 +41,7 @@ class PublicationController
             "short_body"    => $request->get("short_body"),
             "created"       => Carbon::now(),
             "updated"       => Carbon::now(),
-            "removed"       => (float)$request->get("removed"),
+            "removed"       => 0,//(float)$request->get("removed"),
             "tags"          => [],
             "block_body"    => [["type" => "text", "block" => $res["source"]]],
             "answers"       => [],

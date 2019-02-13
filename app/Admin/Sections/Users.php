@@ -100,4 +100,9 @@ class Users extends Section implements Initializable
     {
         return false;
     }
+
+    public function isEditable(Model $model)
+    {
+        return false;
+    }
 }

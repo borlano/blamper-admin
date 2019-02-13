@@ -2,6 +2,7 @@
 
 namespace App\Admin\Sections;
 
+use Illuminate\Database\Eloquent\Model;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Contracts\Initializable;
@@ -69,6 +70,16 @@ class AutoMarks extends Section implements Initializable
     public function onCreate()
     {
         return $this->onEdit(null);
+    }
+
+    public function isEditable(Model $model)
+    {
+        return false;
+    }
+
+    public function isDeletable(Model $model)
+    {
+        return false;
     }
 
     /**

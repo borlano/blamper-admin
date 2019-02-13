@@ -6,6 +6,7 @@ use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Section;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class AutoModels
@@ -87,5 +88,15 @@ class AutoModels extends Section implements Initializable
     public function onRestore($id)
     {
         // remove if unused
+    }
+
+    public function isEditable(Model $model)
+    {
+        return false;
+    }
+
+    public function isDeletable(Model $model)
+    {
+        return false;
     }
 }
