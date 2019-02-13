@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2c9b3e48-1acd-4e47-bed0-5e2dac16942e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Http/Controllers/PublicationController.php" afterPath="$PROJECT_DIR$/app/Admin/Http/Controllers/PublicationController.php" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Sections/AutoMarks.php" afterPath="$PROJECT_DIR$/app/Admin/Sections/AutoMarks.php" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Sections/AutoModels.php" afterPath="$PROJECT_DIR$/app/Admin/Sections/AutoModels.php" />
       <change beforePath="$PROJECT_DIR$/app/Admin/Sections/Publications.php" afterPath="$PROJECT_DIR$/app/Admin/Sections/Publications.php" />
-      <change beforePath="$PROJECT_DIR$/app/Admin/Sections/Users.php" afterPath="$PROJECT_DIR$/app/Admin/Sections/Users.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/app/Admin/Sections/Subjects.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+              <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -45,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/app/Admin/Sections/AutoMarks.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="82" column="5" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
+              <caret line="82" column="5" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
               <folding>
                 <element signature="e#38#77#0#PHP" expanded="true" />
               </folding>
@@ -65,23 +61,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Publications.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Publications.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Admin/Sections/Publications.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="92" column="22" lean-forward="false" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
+            <state relative-caret-position="348">
+              <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
               <folding>
-                <marker date="1550045915336" expanded="true" signature="1754:1763" ph="..." />
+                <marker date="1550047819087" expanded="true" signature="1754:1763" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PublicationController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PublicationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Admin/Http/Controllers/PublicationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+            <state relative-caret-position="490">
+              <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
               <folding>
                 <element signature="e#1599#1855#1#PHP" expanded="false" />
                 <element signature="e#1622#1841#1#PHP" expanded="false" />
@@ -104,6 +100,57 @@
                 <element signature="e#7514#7552#0#PHP" expanded="false" />
                 <marker date="1550045915372" expanded="true" signature="4208:4498" ph="..." />
                 <marker date="1550045915372" expanded="true" signature="4690:4927" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="file.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/vendor/sleeping_owl/default/file.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+              <folding>
+                <marker date="1550047449552" expanded="true" signature="43:83" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="103:110" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="141:149" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="159:168" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="248:308" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="368:525" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="375:523" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="403:522" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="544:552" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="575:605" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="623:630" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="1522:1563" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="1726:1767" ph="..." />
+                <marker date="1550047449552" expanded="true" signature="1903:1961" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="image.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/vendor/sleeping_owl/default/image.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="552">
+              <caret line="54" column="61" lean-forward="false" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
+              <folding>
+                <marker date="1550047636440" expanded="true" signature="44:84" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="104:111" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="142:150" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="160:169" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="249:309" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="338:496" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="345:494" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="374:493" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="512:520" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="540:570" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="585:592" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="1499:1541" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="1704:1746" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="1818:1824" ph="..." />
+                <marker date="1550047636440" expanded="true" signature="1891:1949" ph="..." />
               </folding>
             </state>
           </provider>
@@ -136,8 +183,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/app.php" />
-        <option value="$PROJECT_DIR$/app/Admin/Sections/Subject.php" />
         <option value="$PROJECT_DIR$/app/Providers/AdminSectionsServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Admin/Tree/SubjectTree.php" />
         <option value="$PROJECT_DIR$/vendor/laravelrus/sleepingowl/src/Display/Tree/SimpleTreeType.php" />
@@ -185,8 +230,10 @@
         <option value="$PROJECT_DIR$/app/Admin/Sections/AutoMarks.php" />
         <option value="$PROJECT_DIR$/app/Admin/Sections/AutoModels.php" />
         <option value="$PROJECT_DIR$/app/Admin/Sections/Users.php" />
-        <option value="$PROJECT_DIR$/app/Admin/Sections/Publications.php" />
         <option value="$PROJECT_DIR$/app/Admin/Http/Controllers/PublicationController.php" />
+        <option value="$PROJECT_DIR$/resources/views/vendor/sleeping_owl/default/file.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/vendor/sleeping_owl/default/image.blade.php" />
+        <option value="$PROJECT_DIR$/app/Admin/Sections/Publications.php" />
       </list>
     </option>
   </component>
@@ -413,6 +460,109 @@
               <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="public" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sleeping_owl" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sleeping_owl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravelrus" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravelrus" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sleepingowl" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravelrus" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sleepingowl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravelrus" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sleepingowl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravelrus" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sleepingowl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravelrus" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sleepingowl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="form" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="blamper-admin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="blamper-admin" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="vendor" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="laravelrus" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="sleepingowl" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="default" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="form" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="element" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -427,16 +577,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\app\Models" />
-      <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\resources\views\vendor\sleeping_owl\default" />
-      <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\resources\views" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\resources\views" />
       <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\resources\views\vendor\sleeping_owl\default" />
       <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\app\Admin" />
       <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\public" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\resources\views\vendor\sleeping_owl\default" />
+      <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\app\Models" />
+      <recent name="D:\OpS-v5.2.8\OSPanel\domains\blamper-admin\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -485,12 +635,12 @@
       <workItem from="1549530547431" duration="5462000" />
       <workItem from="1549604937159" duration="17878000" />
       <workItem from="1549864485742" duration="5714000" />
-      <workItem from="1550045624461" duration="587000" />
+      <workItem from="1550045624461" duration="2193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="194431000" />
+    <option name="totallyTimeSpent" value="196037000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
@@ -579,20 +729,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/laravelrus/sleepingowl/src/Section.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="32" lean-forward="false" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/laravelrus/sleepingowl/src/Model/SectionModelConfiguration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Temp/scp02490/home/blamper/releases/current/common/config/main-local.php" />
     <entry file="file://$PROJECT_DIR$/config/sleeping_owl.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -644,14 +780,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Services/PublicationServices.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="33" selection-end-line="51" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -761,26 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Sections/AutoModels.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-          <folding>
-            <element signature="e#38#95#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Sections/AutoMarks.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="82" column="5" lean-forward="true" selection-start-line="74" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
-          <folding>
-            <element signature="e#38#77#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Sections/Users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="518">
@@ -792,25 +900,23 @@
     <entry file="file://$PROJECT_DIR$/app/Admin/Sections/Subjects.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="62" column="34" lean-forward="true" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
+          <caret line="62" column="34" lean-forward="false" selection-start-line="62" selection-start-column="34" selection-end-line="62" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Admin/Sections/Publications.php">
+    <entry file="file://$PROJECT_DIR$/app/Services/PublicationServices.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="92" column="22" lean-forward="false" selection-start-line="92" selection-start-column="22" selection-end-line="92" selection-end-column="22" />
-          <folding>
-            <marker date="1550045915336" expanded="true" signature="1754:1763" ph="..." />
-          </folding>
+        <state relative-caret-position="229">
+          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Admin/Http/Controllers/PublicationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        <state relative-caret-position="490">
+          <caret line="45" column="34" lean-forward="false" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
           <folding>
             <element signature="e#1599#1855#1#PHP" expanded="false" />
             <element signature="e#1622#1841#1#PHP" expanded="false" />
@@ -833,6 +939,83 @@
             <element signature="e#7514#7552#0#PHP" expanded="false" />
             <marker date="1550045915372" expanded="true" signature="4208:4498" ph="..." />
             <marker date="1550045915372" expanded="true" signature="4690:4927" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Sections/AutoMarks.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="82" column="5" lean-forward="false" selection-start-line="74" selection-start-column="4" selection-end-line="82" selection-end-column="5" />
+          <folding>
+            <element signature="e#38#77#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Sections/AutoModels.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="39" lean-forward="false" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <folding>
+            <element signature="e#38#95#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/sleeping_owl/default/image.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="54" column="61" lean-forward="false" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
+          <folding>
+            <marker date="1550047636440" expanded="true" signature="44:84" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="104:111" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="142:150" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="160:169" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="249:309" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="338:496" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="345:494" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="374:493" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="512:520" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="540:570" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="585:592" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="1499:1541" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="1704:1746" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="1818:1824" ph="..." />
+            <marker date="1550047636440" expanded="true" signature="1891:1949" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/vendor/sleeping_owl/default/file.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="22" lean-forward="true" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+          <folding>
+            <marker date="1550047449552" expanded="true" signature="43:83" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="103:110" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="141:149" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="159:168" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="248:308" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="368:525" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="375:523" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="403:522" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="544:552" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="575:605" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="623:630" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="1522:1563" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="1726:1767" ph="..." />
+            <marker date="1550047449552" expanded="true" signature="1903:1961" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Admin/Sections/Publications.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="110" column="26" lean-forward="false" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+          <folding>
+            <marker date="1550047819087" expanded="true" signature="1754:1763" ph="..." />
           </folding>
         </state>
       </provider>

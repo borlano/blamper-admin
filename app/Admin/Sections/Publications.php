@@ -104,10 +104,10 @@ class Publications extends Section implements Initializable
                         AdminFormElement::image("extra.cover","Изображение")->setSaveCallback(function($file, $path, $filename) use ($id){
                             $withoutExt = Files::create()->_id;
                             $service = PublicationServices::genPathToFile($withoutExt);
-                            //$file->move(public_path("/steady/".$service."/".$withoutExt), $withoutExt.".jpg"); //local
-                            $file->move(public_path("/steady/".$service."/".$withoutExt), $withoutExt.".jpg"); //prod
+                            $file->move(public_path("/steady/".$service."/".$withoutExt), $withoutExt.".jpg"); //local
+                            //$file->move(public_path("/steady/".$service."/".$withoutExt), $withoutExt.".jpg"); //prod
                             PublicationServices::resizeImages($withoutExt.".jpg", $withoutExt);
-                            return ['path' => "", 'value' => $withoutExt];
+                            return ['path' => "", 'value' => "/steady/".$service."/".$withoutExt."/".$withoutExt.".jpg", "key" => $withoutExt];
                         })->required()
                     ])
                     ->addColumn([AdminFormElement::wysiwyg("extra.source", "Текст","ckeditor")->setHeight(500)->required()])
