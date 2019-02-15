@@ -89,7 +89,7 @@ class Publications extends Section implements Initializable
                     ->addColumn([AdminFormElement::select('type', 'Тип',[5 => "Статья", 7 => "Вопрос"])->setDefaultValue(5)]),
 
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::checkbox('status', 'Активен')->setDefaultValue(1)],1)
+                    ->addColumn([AdminFormElement::checkbox('status', 'Активен')->setDefaultValue(1)])
                     //->addColumn([AdminFormElement::checkbox('removed', 'Удален')])
                     ->addColumn([AdminFormElement::select('subject', 'Рубрика')->required()
                         ->setModelForOptions(Subject::class)
