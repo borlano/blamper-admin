@@ -59,7 +59,7 @@ class AutoModels extends Section implements Initializable
     /**
      * @param int $id
      *
-     * @return FormInterface
+     * @return void
      */
     public function onEdit($id)
     {
@@ -67,7 +67,7 @@ class AutoModels extends Section implements Initializable
     }
 
     /**
-     * @return FormInterface
+     * @return void
      */
     public function onCreate()
     {

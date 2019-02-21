@@ -2,11 +2,18 @@
 
 namespace App\Admin\Sections;
 
+use App\Models\AutoModel;
 use Illuminate\Database\Eloquent\Model;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Section;
+use SleepingOwl\Admin\Form\FormElements;
+use AdminColumn;
+use AdminDisplay;
+use AdminForm;
+use AdminColumnFilter;
+use AdminFormElement;
 
 /**
  * Class AutoMarks
@@ -17,23 +24,6 @@ use SleepingOwl\Admin\Section;
  */
 class AutoMarks extends Section implements Initializable
 {
-    /**
-     * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
-     *
-     * @var bool
-     */
-    protected $checkAccess = false;
-
-    /**
-     * @var string
-     */
-    protected $title;
-
-    /**
-     * @var string
-     */
-    protected $alias;
-
     public function initialize()
     {
         $this->title = 'Марки автомобилей';
@@ -47,9 +37,12 @@ class AutoMarks extends Section implements Initializable
     {
         $display = \AdminDisplay::datatables()
             ->setColumns([
-                \AdminColumn::relatedLink('mark_id', 'ID'),
-                \AdminColumn::text('name_ru', 'Название'),
+                \AdminColumn::text('mark_id', 'ID'),
+                \AdminColumnEditable::text('name_ru', 'Название(ru)'),
+                \AdminColumnEditable::text('mark_name', 'Название(en)'),
+                \AdminColumn::text('slug', 'Алиас'),
             ])
+
             ->paginate(30);
         return $display;
     }
@@ -61,11 +54,28 @@ class AutoMarks extends Section implements Initializable
      */
     public function onEdit($id)
     {
-        // remove if unused
+        $display = AdminForm::form()->addElement(
+            new FormElements([
+                AdminFormElement::columns()
+                    ->addColumn([AdminFormElement::text('name_ru', 'Название(ru)')->required()])
+                    ->addColumn([AdminFormElement::text('mark_name', 'Название(en)')->required()]),
+                AdminFormElement::columns()
+                    ->addColumn([AdminFormElement::text('description_url', 'Ссылка на детальное описание')]),
+                AdminFormElement::columns()
+                    ->addColumn([AdminFormElement::ckeditor('description', 'Описание')]),
+                AdminFormElement::columns()
+                    ->addColumn([AdminFormElement::multiselect('models','Модели')
+                        ->setOptions(AutoModel::getAutoModels())
+                        ->required()
+                    ]),
+            ])
+        );
+        return $display;
     }
 
     /**
      * @return FormInterface
+     * @throws \SleepingOwl\Admin\Exceptions\Form\Element\SelectException
      */
     public function onCreate()
     {
@@ -74,27 +84,11 @@ class AutoMarks extends Section implements Initializable
 
     public function isEditable(Model $model)
     {
-        return false;
+        return true;
     }
 
     public function isDeletable(Model $model)
     {
         return false;
-    }
-
-    /**
-     * @return void
-     */
-    public function onDelete($id)
-    {
-        // remove if unused
-    }
-
-    /**
-     * @return void
-     */
-    public function onRestore($id)
-    {
-        // remove if unused
     }
 }

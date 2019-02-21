@@ -78,7 +78,9 @@ class Publications extends Section implements Initializable
     /**
      * @param int $id
      *
+     * @param Request $request
      * @return FormInterface
+     * @throws \SleepingOwl\Admin\Exceptions\Form\Element\SelectException
      */
     public function onEdit($id,Request $request)
     {
@@ -117,7 +119,9 @@ class Publications extends Section implements Initializable
     }
 
     /**
+     * @param Request $request
      * @return FormInterface
+     * @throws \SleepingOwl\Admin\Exceptions\Form\Element\SelectException
      */
     public function onCreate(Request $request)
     {
