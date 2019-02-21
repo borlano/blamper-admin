@@ -2,6 +2,7 @@
 
 namespace App\Admin\Sections;
 
+use App\Models\AutoMark;
 use App\Models\AutoModel;
 use Illuminate\Database\Eloquent\Model;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;

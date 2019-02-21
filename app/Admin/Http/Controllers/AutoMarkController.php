@@ -52,7 +52,13 @@ class AutoMarkController
 
         return redirect("/auto_marks/$auto_mark->_id/edit");
     }
-
+//TODO нужны валидаторы
+    /**
+     * @param Request $request
+     * @param \Cviebrock\LaravelElasticsearch\Manager $elasticsearch
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function editAutoMark(Request $request,\Cviebrock\LaravelElasticsearch\Manager $elasticsearch, $id){
 
         $name_ru = $request->get("name_ru");
