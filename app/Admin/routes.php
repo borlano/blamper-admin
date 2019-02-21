@@ -12,6 +12,6 @@ Route::post('/subjects/create', 'App\Admin\Http\Controllers\SubjectController@cr
 Route::post('/subjects/{id}/edit', 'App\Admin\Http\Controllers\SubjectController@editSubject')->name('admin.edit.subject');
 
 Route::post('/auto_marks/create', 'App\Admin\Http\Controllers\AutoMarkController@createAutoMark')->name('admin.create.automark');
-//Route::post('/auto_marks/{id}/edit', 'App\Admin\Http\Controllers\AutoMarkController@editAutoMark')->name('admin.edit.automark');
+Route::post('/auto_marks/{id}/edit', 'App\Admin\Http\Controllers\AutoMarkController@editAutoMark')->name('admin.edit.automark');
 
 Route::post('/users/{id}/edit', 'App\Admin\Http\Controllers\UserController@editUser')->name('admin.edit.user');

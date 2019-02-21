@@ -55,6 +55,25 @@ class AutoMarkController
 
     public function editAutoMark(Request $request,\Cviebrock\LaravelElasticsearch\Manager $elasticsearch, $id){
 
+        $name_ru = $request->get("name_ru");
+        $name_en = $request->get("mark_name");
+        $description_url = $request->get("description_url");
+        $description = $request->get("description");
+        $models = $request->get("models");
+
+        //ид моделей приходят в виде строки, конвертим в инт
+        foreach ($models as $key=>$model) {
+            $models[$key] = (int)$model;
+        }
+
+        AutoMark::where("_id", $id)->update([
+            "name_ru" => $name_ru,
+            "mark_name" => $name_en,
+            "slug" => Str::slug($name_ru),
+            "description_url" => $description_url,
+            "description" => $description,
+            "models" => $models,
+        ]);
         return redirect()->back();
     }
 }
