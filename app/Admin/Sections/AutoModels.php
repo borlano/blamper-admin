@@ -2,11 +2,18 @@
 
 namespace App\Admin\Sections;
 
+use App\Models\AutoMark;
 use SleepingOwl\Admin\Contracts\Display\DisplayInterface;
 use SleepingOwl\Admin\Contracts\Form\FormInterface;
 use SleepingOwl\Admin\Contracts\Initializable;
 use SleepingOwl\Admin\Section;
 use Illuminate\Database\Eloquent\Model;
+use SleepingOwl\Admin\Form\FormElements;
+use AdminColumn;
+use AdminDisplay;
+use AdminForm;
+use AdminColumnFilter;
+use AdminFormElement;
 
 /**
  * Class AutoModels
@@ -17,23 +24,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class AutoModels extends Section implements Initializable
 {
-    /**
-     * @see http://sleepingowladmin.ru/docs/model_configuration#ограничение-прав-доступа
-     *
-     * @var bool
-     */
-    protected $checkAccess = false;
-
-    /**
-     * @var string
-     */
-    protected $title;
-
-    /**
-     * @var string
-     */
-    protected $alias;
-
     public function initialize()
     {
         $this->title = 'Модели автомобилей';
@@ -63,7 +53,18 @@ class AutoModels extends Section implements Initializable
      */
     public function onEdit($id)
     {
-        // remove if unused
+        $display = AdminForm::form()->addElement(
+            new FormElements([
+                AdminFormElement::columns()
+                    ->addColumn([AdminFormElement::text('name_ru', 'Название(ru)')->required()])
+                    ->addColumn([AdminFormElement::text('model_name', 'Название(en)')->required()]),
+//                AdminFormElement::columns()
+//                    ->addColumn([AdminFormElement::select('mark_id', 'Марка')
+//                        ->setOptions(AutoMark::getAutoMarks())
+//                    ]),
+            ])
+        );
+        return $display;
     }
 
     /**
@@ -74,25 +75,9 @@ class AutoModels extends Section implements Initializable
         return $this->onEdit(null);
     }
 
-    /**
-     * @return void
-     */
-    public function onDelete($id)
-    {
-        // remove if unused
-    }
-
-    /**
-     * @return void
-     */
-    public function onRestore($id)
-    {
-        // remove if unused
-    }
-
     public function isEditable(Model $model)
     {
-        return false;
+        return true;
     }
 
     public function isDeletable(Model $model)

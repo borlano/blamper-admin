@@ -31,5 +31,15 @@ class AutoMark extends Eloquent
         return 'mark_id';
     }
 
+    public static function getAutoMarks(){
+        $models = AutoMark::select("mark_id","mark_name")->where("mark_name", "!=", null)->get()->toArray();
+        $modeles = [];
+        foreach ($models as $key=>$model)
+        {
+            $modeles[$model["mark_id"]] = $model["mark_name"];
+        }
+        return $modeles;
+    }
+
 
 }

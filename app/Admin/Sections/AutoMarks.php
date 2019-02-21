@@ -64,11 +64,11 @@ class AutoMarks extends Section implements Initializable
                     ->addColumn([AdminFormElement::text('description_url', 'Ссылка на детальное описание')]),
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::ckeditor('description', 'Описание')]),
-                AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::multiselect('models','Модели')
-                        ->setOptions(AutoModel::getAutoModels())
-                        ->required()
-                    ]),
+//                AdminFormElement::columns()
+//                    ->addColumn([AdminFormElement::multiselect('models','Модели')
+//                        ->setOptions(AutoModel::getAutoModels())
+//                        ->required()
+//                    ]),
             ])
         );
         return $display;
