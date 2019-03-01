@@ -42,6 +42,7 @@ class AddTrailSlashes extends Command
     {
         $articles = Publication::select("block_body")->where("type", 5)->get();
         $bar = $this->output->createProgressBar($articles->count());
+        echo "Start adding trail slashes to end of links";
         $bar->start();
         foreach ($articles as $article){
 
@@ -53,21 +54,18 @@ class AddTrailSlashes extends Command
                         libxml_use_internal_errors(true);
                         $html->loadHTML($text,LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
-                        //$html = HTMLDomParser::str_get_html($text);
                         foreach($html->getElementsByTagName('a') as $hr) {
                             $href = $hr->getAttribute('href');
-                            if ($href && $href != "#") {
+                            if ($href && $href != "#" && substr($href, 0, 1) != "#") {
                                 $href = str_replace("http://", "https://", $href);
-                                $href = $href . "/";
+                                if(substr($href, -1, 1) != "/") {
+                                    $href = $href . "/";
+                                }
                                 $hr->setAttribute('href',$href);
-
                                 $article->setAttribute("block_body.$key.block",$html->saveHTML());
-                                //var_dump(utf8_decode($html->saveHTML($html->documentElement)));die;
                             }
                         }
-                        //var_dump($html->saveHTML());die;
                         $article->setAttribute("block_body.$key.block",utf8_decode($html->saveHTML($html->documentElement)));
-                        //var_dump(utf8_decode($html->saveHTML($html->documentElement)));die;
                     }
                 }
             }
@@ -75,6 +73,6 @@ class AddTrailSlashes extends Command
             $bar->advance();
         }
         $bar->finish();
-
+        echo "Finish!";
     }
 }
