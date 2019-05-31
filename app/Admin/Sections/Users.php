@@ -50,6 +50,13 @@ class Users extends Section implements Initializable
                 AdminColumn::text('profile.firstname', 'Имя'),
                 AdminColumn::text('profile.lastname', 'Фамилия'),
                 \AdminColumn::datetime('created', 'Дата регистрации'),
+                AdminColumn::custom('Действия', function ($model){
+                    if($model->block == 0 ) {
+                        return "<a class='btn btn-primary' href='/block?id=$model->_id'>Заблокировать</a>";
+                    }else{
+                        return "<a class='btn btn-primary' href='/unblock?id=$model->_id'>Разблокировать</a>";
+                    }
+                })
             ])
             ->paginate(30)
             ->setApply(function ($query) {
@@ -75,7 +82,8 @@ class Users extends Section implements Initializable
         $display = AdminForm::form()->addElement(
             new FormElements([
                 AdminFormElement::columns()
-                    ->addColumn([AdminFormElement::text('email', 'Email')]),
+                    ->addColumn([AdminFormElement::text('email', 'Email')])
+                    ->addColumn([AdminFormElement::checkbox('block', 'Заблокирован')]),
                 AdminFormElement::columns()
                     ->addColumn([AdminFormElement::text('profile.firstname', 'Имя')])
                     ->addColumn([AdminFormElement::text('profile.lastname', 'Фамилия')])
@@ -103,6 +111,6 @@ class Users extends Section implements Initializable
 
     public function isEditable(Model $model)
     {
-        return false;
+        return true;
     }
 }

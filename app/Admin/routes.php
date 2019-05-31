@@ -18,3 +18,6 @@ Route::post('/subjects/{id}/edit', 'App\Admin\Http\Controllers\SubjectController
 //Route::post('/auto_models/{id}/edit', 'App\Admin\Http\Controllers\AutoModelsController@editAutoModels')->name('admin.edit.automodels');
 
 Route::post('/users/{id}/edit', 'App\Admin\Http\Controllers\UserController@editUser')->name('admin.edit.user');
+
+Route::get('/block', 'App\Admin\Http\Controllers\UserController@blockUser')->name('admin.block.user');
+Route::get('/unblock', 'App\Admin\Http\Controllers\UserController@unblockUser')->name('admin.unblock.user');

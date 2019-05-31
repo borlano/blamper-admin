@@ -42,4 +42,18 @@ class UserController
 
         return redirect()->back();
     }
+
+    public function blockUser(Request $request){
+        User::where("_id",$request->id)->update([
+            "block" => 1
+        ]);
+        return redirect()->back();
+    }
+
+    public function unblockUser(Request $request){
+        User::where("_id",$request->id)->update([
+            "block" => 0
+        ]);
+        return redirect()->back();
+    }
 }
